@@ -10,5 +10,3 @@ export default {
   },
   isSmallDevice: width < 375,
 };
-
-//TODO: use this

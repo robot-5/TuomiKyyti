@@ -11,10 +11,14 @@ class HomeScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={{ maxHeight: 100, flex: 50, flexDirection: 'column', justifyContent: 'space-between', }}>
+      <View style={{ maxHeight: 300, flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
         <Button
           title="Go to Jane's profile"
           onPress={() => navigate('Profile', { name: 'Jane' })}
+        />
+        <Button
+          title="Order a ride"
+          onPress={() => navigate('OrderFrom')}
         />
         <Button
           title="Send Mail"
