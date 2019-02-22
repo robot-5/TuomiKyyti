@@ -21,6 +21,11 @@ const buttonStyles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'steelblue',
         padding: 10
+    },
+    text:
+    {
+        color: 'white',
+        fontWeight: 'bold',
     }
 
 })

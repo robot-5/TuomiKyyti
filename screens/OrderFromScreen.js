@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, Button, Text, TouchableOpacity } from 'react-native';
 import Layout from '../constants/Layout';
-import { buttonStyles } from '../constants/ButtonStyles';
+import {createButton} from '../components/Buttons';
+
 
 class OrderFromScreen extends React.Component {
     static navigationOptions = {
@@ -19,12 +20,8 @@ class OrderFromScreen extends React.Component {
                 {/* TODO: implement this */}
                 <Text>User Input goes here</Text>
 
-                <TouchableOpacity
-                    style={buttonStyles.wideButton}
-                    onPress={() => navigate('OrderTo')}
-                >
-                    <Text style={{ color: 'white' }}> Confirm From </Text>
-                </TouchableOpacity>
+                {createButton(() => navigate('OrderTo'), 'Confirm From', 'wide')}
+                
 
             </View>
         );
