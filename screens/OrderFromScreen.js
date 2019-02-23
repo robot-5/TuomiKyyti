@@ -13,20 +13,19 @@ class OrderFromScreen extends React.Component {
         super(props);
         this.state = {
             orderData: this.props.navigation.getParam('orderData'),
-            setFromLocation: (event) => {
-                //complicated function because orderData is nested
-                this.setState({
-                    orderData: {
-                        ...this.state.orderData,
-                        fromLocation: event.nativeEvent.text,
-                    },
-                });
-
-            }
         };
     }
 
+    setFromLocation(event) {
+        //complicated function because orderData is nested        
+        this.setState({
+            orderData: {
+                ...this.state.orderData,
+                fromLocation: event.nativeEvent.text,
+            },
+        });
 
+    }
 
     render() {
         const { navigate } = this.props.navigation;
@@ -39,7 +38,7 @@ class OrderFromScreen extends React.Component {
                 <TextInput
                     style={{ height: 40 }}
                     placeholder="Enter from where here"
-                    onSubmitEditing={this.state.setFromLocation}
+                    onSubmitEditing={(event) => this.setFromLocation(event)}
                 />
 
                 {createButton(() => navigate('OrderTo', { orderData: this.state.orderData }), 'Confirm From', 'wide')}

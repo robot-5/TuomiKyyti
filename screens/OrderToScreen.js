@@ -8,8 +8,7 @@ class OrderToScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            orderData: this.props.navigation.getParam('orderData', 'NOPE'),
-
+            orderData: this.props.navigation.getParam('orderData'),
         };
     }
 
@@ -18,7 +17,7 @@ class OrderToScreen extends React.Component {
     };
 
     render() {
-        const { getParam, navigate, push } = this.props.navigation;
+        const { navigate } = this.props.navigation;
         return (
             <View style={{ height: Layout.window.height, flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
 
