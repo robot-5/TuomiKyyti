@@ -1,9 +1,14 @@
-import React, { Component } from 'react';
-import { View, Button, Text, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View, Text, TextInput } from 'react-native';
 import Layout from '../constants/Layout';
 import { createButton } from '../components/Buttons';
+import { displayOrderData } from '../components/HelperFunctions';
+
 
 class OrderToScreen extends React.Component {
+    static navigationOptions = {
+        title: 'To Where',
+    };
 
     constructor(props) {
         super(props);
@@ -12,24 +17,33 @@ class OrderToScreen extends React.Component {
         };
     }
 
-    static navigationOptions = {
-        title: 'To Where',
-    };
+    setToLocation(event) {
+        //complicated function because orderData is nested        
+        this.setState({
+            orderData: {
+                ...this.state.orderData,
+                toLocation: event.nativeEvent.text,
+            },
+        });
+
+    }
 
     render() {
         const { navigate } = this.props.navigation;
         return (
             <View style={{ height: Layout.window.height, flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
 
-                {/* TODO: implement this */}
-                <Text>You start from: {this.state.orderData.fromLocation}</Text>
+                {displayOrderData(this.state.orderData)}
 
-                {/* TODO: implement this */}
-                <Text>User Input goes here</Text>
+                {/* TODO: adjust for keyboard */}
+                <TextInput
+                    style={{ height: 40 }}
+                    placeholder="Enter to where here"
+                    onSubmitEditing={(event) => this.setToLocation(event)}
+                />
 
+                {createButton(() => navigate('OrderWhen', { orderData: this.state.orderData }), 'Confirm To', 'wide')}
 
-                {/* TODO: go to right screen when implemented */}
-                {createButton(() => navigate('Home'), 'Confirm To', 'wide')}
 
             </View>
         );

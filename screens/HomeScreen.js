@@ -20,7 +20,7 @@ class HomeScreen extends React.Component {
       fromLocation: "",
       toLocation: "",
       dateTime: "",
-      leaving: "", //if customer wants to leave or arrive at dateTime
+      leaving: true, //if customer wants to leave or arrive at dateTime
       passengers: "",
       comment: "", //free text message from customer
     }

@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { View, Button, Text, TouchableOpacity, TextInput } from 'react-native';
+import React from 'react';
+import { View, Text, TextInput } from 'react-native';
 import Layout from '../constants/Layout';
 import { createButton } from '../components/Buttons';
+import { displayOrderData } from '../components/HelperFunctions';
 
 
 class OrderFromScreen extends React.Component {
@@ -32,9 +33,9 @@ class OrderFromScreen extends React.Component {
         return (
             <View style={{ height: Layout.window.height, flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
 
-                {/* TODO: implement this */}
-                <Text>Some status message goes here</Text>
+                {displayOrderData(this.state.orderData)}
 
+                {/* TODO: adjust for keyboard */}
                 <TextInput
                     style={{ height: 40 }}
                     placeholder="Enter from where here"
