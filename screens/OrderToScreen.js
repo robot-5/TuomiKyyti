@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, TextInput } from 'react-native';
-import Layout from '../constants/Layout';
+import { TextInput } from 'react-native';
 import { createButton } from '../components/Buttons';
 import { displayOrderData } from '../components/HelperFunctions';
+import { OrderBaseScreen } from './OrderBaseScreen';
 
 
 class OrderToScreen extends React.Component {
@@ -29,24 +29,17 @@ class OrderToScreen extends React.Component {
     }
 
     render() {
-        const { navigate } = this.props.navigation;
-        return (
-            <View style={{ height: Layout.window.height, flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
+        const currentOrderData = displayOrderData(this.state.orderData);
+        const input = <TextInput
+            style={{ height: 40 }}
+            placeholder="Enter to where here"
+            onSubmitEditing={(event) => this.setToLocation(event)}
+        />
+        const footer = createButton(() => this.props.navigation.navigate('OrderWhen', { orderData: this.state.orderData }), 'Confirm To', 'wide')
 
-                {displayOrderData(this.state.orderData)}
-
-                {/* TODO: adjust for keyboard */}
-                <TextInput
-                    style={{ height: 40 }}
-                    placeholder="Enter to where here"
-                    onSubmitEditing={(event) => this.setToLocation(event)}
-                />
-
-                {createButton(() => navigate('OrderWhen', { orderData: this.state.orderData }), 'Confirm To', 'wide')}
-
-
-            </View>
-        );
+        return <OrderBaseScreen currentOrderData={currentOrderData}
+            input={input}
+            footer={footer} />
     }
 }
 

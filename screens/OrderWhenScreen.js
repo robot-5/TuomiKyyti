@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, TextInput, Switch } from 'react-native';
-import Layout from '../constants/Layout';
 import { createButton } from '../components/Buttons';
 import { displayOrderData } from '../components/HelperFunctions';
+import { OrderBaseScreen } from './OrderBaseScreen';
 
 
 class OrderWhenScreen extends React.Component {
@@ -36,33 +36,30 @@ class OrderWhenScreen extends React.Component {
     }
 
     render() {
-        const { navigate } = this.props.navigation;
-        return (
-            <View style={{ height: Layout.window.height, flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
+        const currentOrderData = displayOrderData(this.state.orderData);
 
-                {displayOrderData(this.state.orderData)}
+        //inputs for date and time of trip plus whether customer wants to leave or arrive at given time
+        const input = <View>
+            <TextInput
+                style={{ height: 40 }}
+                placeholder="Enter date and time"
+                onSubmitEditing={(event) => this.setDateTime(event)}
+            />
 
-                {/* TODO: adjust for keyboard */}
-                <TextInput
-                    style={{ height: 40 }}
-                    placeholder="Enter date and time"
-                    onSubmitEditing={(event) => this.setDateTime(event)}
-                />
-
-                <View>
-                    <Text>{this.state.orderData.leaving ? 'Order to leave at given time' : 'Order to arrive at given time'}</Text>
-                    <Switch
-                        style={{ marginTop: 30 }}
-                        onValueChange={(value) => this.setLeaving(value)}
-                        value={this.state.orderData.leaving} />
-                </View>
-
-                {/* TODO: navigate to PassengersScreen when implemented */}
-                {createButton(() => navigate('Home'), 'Confirm Time', 'wide')}
-
-
+            <View>
+                <Text>{this.state.orderData.leaving ? 'Order to leave at given time' : 'Order to arrive at given time'}</Text>
+                <Switch
+                    style={{ marginTop: 30 }}
+                    onValueChange={(value) => this.setLeaving(value)}
+                    value={this.state.orderData.leaving} />
             </View>
-        );
+        </View>
+
+        const footer = createButton(() => this.props.navigation.navigate('Home'), 'Confirm Time', 'wide');
+
+        return <OrderBaseScreen currentOrderData={currentOrderData}
+            input={input}
+            footer={footer} />
     }
 }
 
