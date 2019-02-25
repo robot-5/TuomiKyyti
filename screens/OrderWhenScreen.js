@@ -15,6 +15,8 @@ class OrderWhenScreen extends React.Component {
         this.state = {
             orderData: this.props.navigation.getParam('orderData'),
         };
+        this.setDateTime = this.setDateTime.bind(this);
+        this.setLeaving = this.setLeaving.bind(this);
     }
 
     setDateTime(event) {
@@ -43,21 +45,22 @@ class OrderWhenScreen extends React.Component {
             <TextInput
                 style={{ height: 40 }}
                 placeholder="Enter date and time"
-                onSubmitEditing={(event) => this.setDateTime(event)}
+                onSubmitEditing={this.setDateTime}
             />
 
             <View>
                 <Text>{this.state.orderData.leaving ? 'Order to leave at given time' : 'Order to arrive at given time'}</Text>
                 <Switch
                     style={{ marginTop: 30 }}
-                    onValueChange={(value) => this.setLeaving(value)}
+                    onValueChange={this.setLeaving}
                     value={this.state.orderData.leaving} />
             </View>
         </View>
 
         const footer = createButton(() => this.props.navigation.navigate('Home'), 'Confirm Time', 'wide');
 
-        return <OrderBaseScreen currentOrderData={currentOrderData}
+        return <OrderBaseScreen
+            currentOrderData={currentOrderData}
             input={input}
             footer={footer} />
     }

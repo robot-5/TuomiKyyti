@@ -15,10 +15,10 @@ class OrderToScreen extends React.Component {
         this.state = {
             orderData: this.props.navigation.getParam('orderData'),
         };
+        this.setToLocation = this.setToLocation.bind(this);
     }
 
-    setToLocation(event) {
-        //complicated function because orderData is nested        
+    setToLocation(event) {             
         this.setState({
             orderData: {
                 ...this.state.orderData,
@@ -33,11 +33,12 @@ class OrderToScreen extends React.Component {
         const input = <TextInput
             style={{ height: 40 }}
             placeholder="Enter to where here"
-            onSubmitEditing={(event) => this.setToLocation(event)}
+            onSubmitEditing={this.setToLocation}
         />
         const footer = createButton(() => this.props.navigation.navigate('OrderWhen', { orderData: this.state.orderData }), 'Confirm To', 'wide')
 
-        return <OrderBaseScreen currentOrderData={currentOrderData}
+        return <OrderBaseScreen
+            currentOrderData={currentOrderData}
             input={input}
             footer={footer} />
     }
