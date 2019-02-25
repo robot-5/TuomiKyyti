@@ -14,8 +14,9 @@ class HomeScreen extends React.Component {
     const { navigate } = this.props.navigation;
 
     var orderData = {
-      customerName: "",
-      customerNumber: "",
+      // TODO: take username and number as real user input
+      customerName: "Maja Meikalainen",
+      customerNumber: "0815123",
       travelType: "",
       fromLocation: "",
       toLocation: "",
