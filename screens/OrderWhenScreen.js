@@ -7,7 +7,7 @@ import { OrderBaseScreen } from './OrderBaseScreen';
 
 class OrderWhenScreen extends React.Component {
     static navigationOptions = {
-        title: 'To Where',
+        title: 'When',
     };
 
     constructor(props) {
@@ -55,9 +55,9 @@ class OrderWhenScreen extends React.Component {
                     onValueChange={this.setLeaving}
                     value={this.state.orderData.leaving} />
             </View>
-        </View>
+        </View>;
 
-        const footer = createButton(() => this.props.navigation.navigate('Home'), 'Confirm Time', 'wide');
+        const footer = createButton(() => this.props.navigation.navigate('OrderPassengers', { orderData: this.state.orderData }), 'Confirm Time', 'wide');
 
         return <OrderBaseScreen
             currentOrderData={currentOrderData}
