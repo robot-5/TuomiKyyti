@@ -3,6 +3,7 @@ import { TextInput } from 'react-native';
 import { createButton } from '../components/Buttons';
 import { displayOrderData } from '../components/HelperFunctions';
 import { OrderBaseScreen } from './OrderBaseScreen';
+import { createOrderEmailText, sendOrderEmail } from '../communication/Mailing';
 
 
 class OrderCommentScreen extends React.Component {
@@ -16,6 +17,7 @@ class OrderCommentScreen extends React.Component {
             orderData: this.props.navigation.getParam('orderData'),
         };
         this.setComment = this.setComment.bind(this);
+        this.sendOrder = this.sendOrder.bind(this);
     }
 
     setComment(event) {
@@ -27,6 +29,11 @@ class OrderCommentScreen extends React.Component {
         });
     }
 
+    sendOrder() {
+        const { subject, body } = createOrderEmailText(this.state.orderData);
+        sendOrderEmail(subject, body);
+    }
+
     render() {
         const currentOrderData = displayOrderData(this.state.orderData);
         const input =
@@ -35,8 +42,10 @@ class OrderCommentScreen extends React.Component {
                 placeholder="Maybe leave a comment"
                 onSubmitEditing={this.setComment}
             />;
-        const footer = createButton(() => this.props.navigation.navigate('Home', { orderData: this.state.orderData }), 
-        'Confirm Comment', 'wide');
+
+        // TODO: give button special color
+        // TODO: return to home screen after email sending
+        const footer = createButton(this.sendOrder, 'Send Order', 'wide');
 
         return <OrderBaseScreen
             currentOrderData={currentOrderData}

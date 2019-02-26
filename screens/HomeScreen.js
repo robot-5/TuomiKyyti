@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { View, Button } from 'react-native';
-import { sendOrderEmail } from '../communication/Mailing';
-
-
 
 class HomeScreen extends React.Component {
 
@@ -15,7 +12,7 @@ class HomeScreen extends React.Component {
 
     var orderData = {
       // TODO: take username and number as real user input
-      customerName: "Maja Meikalainen",
+      customerName: "Maija Meikalainen",
       customerNumber: "0815123",
       travelType: "",
       fromLocation: "",
@@ -32,7 +29,7 @@ class HomeScreen extends React.Component {
         <Button
           title="Order a ride"
           onPress={() => navigate('OrderFrom', { orderData: orderData })}
-        />
+        />        
 
       </View>
     );
