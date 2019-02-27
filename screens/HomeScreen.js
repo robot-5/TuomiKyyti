@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { View } from 'react-native';
 import { createButton } from '../components/Buttons';
 
 class HomeScreen extends React.Component {
@@ -25,7 +25,7 @@ class HomeScreen extends React.Component {
     }
 
     return (
-      <View style={{ maxHeight: 300, flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
+      <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
 
         {createButton(() => navigate('OrderFrom', { orderData: orderData }), 'ORDER A RIDE')}
 

@@ -4,6 +4,7 @@ import { createButton } from '../components/Buttons';
 import { displayOrderData } from '../components/HelperFunctions';
 import { OrderBaseScreen } from './OrderBaseScreen';
 import { createOrderEmailText, sendOrderEmail } from '../communication/Mailing';
+import { createTextInput } from '../components/TextInput';
 
 
 class OrderCommentScreen extends React.Component {
@@ -36,12 +37,7 @@ class OrderCommentScreen extends React.Component {
 
     render() {
         const currentOrderData = displayOrderData(this.state.orderData);
-        const input =
-            <TextInput
-                style={{ height: 40 }}
-                placeholder="Maybe leave a comment"
-                onSubmitEditing={this.setComment}
-            />;
+        const input = createTextInput("Maybe leave a comment", this.setComment);
 
         // TODO: give button special color
         // TODO: return to home screen after email sending

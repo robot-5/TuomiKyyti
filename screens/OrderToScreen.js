@@ -3,6 +3,7 @@ import { TextInput } from 'react-native';
 import { createButton } from '../components/Buttons';
 import { displayOrderData } from '../components/HelperFunctions';
 import { OrderBaseScreen } from './OrderBaseScreen';
+import { createTextInput } from '../components/TextInput';
 
 
 class OrderToScreen extends React.Component {
@@ -18,7 +19,7 @@ class OrderToScreen extends React.Component {
         this.setToLocation = this.setToLocation.bind(this);
     }
 
-    setToLocation(event) {             
+    setToLocation(event) {
         this.setState({
             orderData: {
                 ...this.state.orderData,
@@ -30,11 +31,7 @@ class OrderToScreen extends React.Component {
 
     render() {
         const currentOrderData = displayOrderData(this.state.orderData);
-        const input = <TextInput
-            style={{ height: 40 }}
-            placeholder="Enter to where here"
-            onSubmitEditing={this.setToLocation}
-        />
+        const input = createTextInput("Enter to where here", this.setToLocation);
         const footer = createButton(() => this.props.navigation.navigate('OrderWhen', { orderData: this.state.orderData }), 'Confirm To')
 
         return <OrderBaseScreen

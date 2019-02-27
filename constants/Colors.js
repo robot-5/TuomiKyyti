@@ -11,4 +11,9 @@ export default {
   warningText: '#666804',
   noticeBackground: tintColor,
   noticeText: '#fff',
+  button: 'black',
+  buttonText: 'white',
+  orderScreenBackground: '#ffd828',
+  textInputBackground: 'white',
+  textInputText: 'black',
 };

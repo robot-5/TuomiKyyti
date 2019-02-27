@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Layout from '../constants/Layout';
+import Colors from '../constants/Colors';
 
 /**
- * Creates a Button based on TouchableOpacity Component with given action, text and width. 
- * Action must be a function, text any string and width a string: 'wide' of 'halfWide'
+ * Creates a Button based on TouchableOpacity Component with given action and text. Text will be in upper case.
  */
 function createButton(action, text) {
     return (
@@ -12,7 +12,7 @@ function createButton(action, text) {
             style={buttonStyles.wideButton}
             onPress={action}
         >
-            <Text style={buttonStyles.text}> {text}</Text>
+            <Text style={buttonStyles.text}> {text.toUpperCase()}</Text>
         </TouchableOpacity>
     );
 }
@@ -25,13 +25,15 @@ const buttonStyles = StyleSheet.create({
         height: 100,
         width: Layout.window.width,
         alignItems: 'center',
-        backgroundColor: 'steelblue',
-        padding: 10
+        backgroundColor: Colors.button,
+        padding: 10,
+        borderRadius: 40,
+
     },
     text:
     {
-        color: 'white',
-        fontSize: 15,
+        color: Colors.buttonText,
+        fontSize: 30,
         fontWeight: 'bold',
     }
 

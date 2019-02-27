@@ -3,6 +3,7 @@ import { TextInput } from 'react-native';
 import { createButton } from '../components/Buttons';
 import { displayOrderData } from '../components/HelperFunctions';
 import { OrderBaseScreen } from './OrderBaseScreen';
+import { createTextInput } from '../components/TextInput';
 
 
 class OrderPassengersScreen extends React.Component {
@@ -31,12 +32,7 @@ class OrderPassengersScreen extends React.Component {
 
     render() {
         const currentOrderData = displayOrderData(this.state.orderData);
-        const input =
-            <TextInput
-                style={{ height: 40 }}
-                placeholder="Enter Passengers (Helpers, Children, ...)"
-                onSubmitEditing={this.setPassengers}
-            />;
+        const input = createTextInput("Enter Passengers (Helpers, Children, ...)", this.setPassengers);
         const footer = createButton(() => this.props.navigation.navigate('OrderComment', { orderData: this.state.orderData }), 'Confirm Passengers', 'wide');
 
         return <OrderBaseScreen

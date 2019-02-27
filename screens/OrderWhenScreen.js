@@ -3,6 +3,7 @@ import { View, Text, TextInput, Switch } from 'react-native';
 import { createButton } from '../components/Buttons';
 import { displayOrderData } from '../components/HelperFunctions';
 import { OrderBaseScreen } from './OrderBaseScreen';
+import { createTextInput } from '../components/TextInput';
 
 
 class OrderWhenScreen extends React.Component {
@@ -43,11 +44,8 @@ class OrderWhenScreen extends React.Component {
         //TODO: use more user-friendly input type
         //inputs for date and time of trip plus whether customer wants to leave or arrive at given time
         const input = <View>
-            <TextInput
-                style={{ height: 40 }}
-                placeholder="Enter date and time"
-                onSubmitEditing={this.setDateTime}
-            />
+
+            {createTextInput("Enter date and time", this.setDateTime)}
 
             <View>
                 <Text>{this.state.orderData.leaving ? 'Order to leave at given time' : 'Order to arrive at given time'}</Text>
