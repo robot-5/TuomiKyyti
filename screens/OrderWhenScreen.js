@@ -32,7 +32,7 @@ class OrderWhenScreen extends React.Component {
         this.setState({
             orderData: {
                 ...this.state.orderData,
-                leaving: value, //TODO: set with correct input type
+                leaving: value,
             },
         });
     }
@@ -40,6 +40,7 @@ class OrderWhenScreen extends React.Component {
     render() {
         const currentOrderData = displayOrderData(this.state.orderData);
 
+        //TODO: use more user-friendly input type
         //inputs for date and time of trip plus whether customer wants to leave or arrive at given time
         const input = <View>
             <TextInput
@@ -57,7 +58,7 @@ class OrderWhenScreen extends React.Component {
             </View>
         </View>;
 
-        const footer = createButton(() => this.props.navigation.navigate('OrderPassengers', { orderData: this.state.orderData }), 'Confirm Time', 'wide');
+        const footer = createButton(() => this.props.navigation.navigate('OrderPassengers', { orderData: this.state.orderData }), 'Confirm Time');
 
         return <OrderBaseScreen
             currentOrderData={currentOrderData}

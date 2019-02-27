@@ -7,13 +7,13 @@ function createOrderEmailText(orderData) {
     //using ES6 template strings (backticks instead of quotes)
     const subject = `Ride Order from ${orderData.customerName}`;
     const body = 
-    `Customer Name: ${orderData.customerName}
-Customer ID: ${orderData.customerName}
-Travel Type: ${orderData.travelType}
-From: ${orderData.fromLocation}
-To: ${orderData.toLocation}
-${orderData.leaving ? 'Leaving' : 'Arriving'} at ${orderData.dateTime}
-Additional Passengers: ${orderData.passengers}
+    `Customer Name: ${orderData.customerName}\n
+Customer ID: ${orderData.customerNumber}\n
+Travel Type: ${orderData.travelType}\n
+From: ${orderData.fromLocation}\n
+To: ${orderData.toLocation}\n
+${orderData.leaving ? 'Leaving' : 'Arriving'} at ${orderData.dateTime}\n
+Additional Passengers: ${orderData.passengers}\n
 Customer Message: ${orderData.comment}`
 
     return { subject: subject, body: body };

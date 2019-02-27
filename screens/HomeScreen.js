@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Button } from 'react-native';
+import { createButton } from '../components/Buttons';
 
 class HomeScreen extends React.Component {
 
@@ -26,10 +27,7 @@ class HomeScreen extends React.Component {
     return (
       <View style={{ maxHeight: 300, flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
 
-        <Button
-          title="Order a ride"
-          onPress={() => navigate('OrderFrom', { orderData: orderData })}
-        />        
+        {createButton(() => navigate('OrderFrom', { orderData: orderData }), 'ORDER A RIDE')}
 
       </View>
     );

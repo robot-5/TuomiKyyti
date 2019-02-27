@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, KeyboardAvoidingView } from 'react-native';
+import { KeyboardAvoidingView } from 'react-native';
 import Layout from '../constants/Layout';
 
 /* base for all screens in order-a-ride logic

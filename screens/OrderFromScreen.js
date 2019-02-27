@@ -35,7 +35,7 @@ class OrderFromScreen extends React.Component {
             placeholder="Enter from where here"
             onSubmitEditing={this.setFromLocation}
         />;
-        const footer = createButton(() => this.props.navigation.navigate('OrderTo', { orderData: this.state.orderData }), 'Confirm From', 'wide');
+        const footer = createButton(() => this.props.navigation.navigate('OrderTo', { orderData: this.state.orderData }), 'Confirm From');
 
         return <OrderBaseScreen
             currentOrderData={currentOrderData}
