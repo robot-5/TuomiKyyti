@@ -6,8 +6,10 @@ import { OrderToScreen } from '../screens/OrderToScreen';
 import { OrderWhenScreen } from '../screens/OrderWhenScreen';
 import { OrderPassengersScreen } from '../screens/OrderPassengersScreen';
 import { OrderCommentScreen } from '../screens/OrderCommentScreen';
+import { LoginScreen } from '../screens/LoginScreen';
 
 const AppNavigator = createStackNavigator({
+  Login: { screen: LoginScreen },
   Home: { screen: HomeScreen },
   OrderFrom: { screen: OrderFromScreen },
   OrderTo: { screen: OrderToScreen },
@@ -17,6 +19,6 @@ const AppNavigator = createStackNavigator({
   // TODO: add routes for other screens here
 
 },
-  { initialRouteName: 'Home' });
+  { initialRouteName: 'Login' });
 
 export { AppNavigator };

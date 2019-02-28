@@ -9,25 +9,24 @@ class HomeScreen extends React.Component {
   };
 
   render() {
-    const { navigate } = this.props.navigation;
+    const { navigate, getParam } = this.props.navigation;
 
     var orderData = {
-      // TODO: take username and number as real user input
-      customerName: "Maija Meikalainen",
-      customerNumber: "0815123",
-      travelType: "",
-      fromLocation: "",
-      toLocation: "",
-      dateTime: "",
+      customerName: getParam('customerName'),
+      customerNumber: getParam('customerNumber'),
+      travelType: '',
+      fromLocation: '',
+      toLocation: '',
+      dateTime: '',
       leaving: true, //if customer wants to leave or arrive at dateTime
-      passengers: "",
-      comment: "", //free text message from customer
+      passengers: '',
+      comment: '', //free text message from customer
     }
 
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
 
-        {createButton(() => navigate('OrderFrom', { orderData: orderData }), 'ORDER A RIDE')}
+        {createButton(() => navigate('OrderFrom', { orderData: orderData }), 'Order A Ride')}
 
       </View>
     );
