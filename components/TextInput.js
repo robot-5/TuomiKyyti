@@ -1,12 +1,11 @@
 import React from 'react';
 import { TextInput, StyleSheet } from 'react-native';
 import Colors from '../constants/Colors';
-import Layout from '../constants/Layout';
 import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-  listenOrientationChange as loc,
-  removeOrientationListener as rol
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp,
+    listenOrientationChange as loc,
+    removeOrientationListener as rol
 } from 'react-native-responsive-screen';
 
 
@@ -23,11 +22,8 @@ function createTextInput(text, action) {
 }
 
 const textInputStyles = StyleSheet.create({
-    // Button that spans the whole width of the screen
     textInput:
     {
-        //height: 60,
-        //width: Layout.window.width - 20,
         width: wp('86%'),
         height: hp('10%'),
         backgroundColor: Colors.textInputBackground,
@@ -36,10 +32,6 @@ const textInputStyles = StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
     },
-    // textInputText:
-    // {
-    //     color: Colors.textInputText,
-    // }
 })
 
 export { createTextInput };

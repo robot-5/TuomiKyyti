@@ -1,9 +1,12 @@
 import React from 'react';
 import { Picker, View, Text } from 'react-native';
-import Layout from '../constants/Layout';
 import { createButton } from '../components/Buttons';
 import { displayOrderData } from '../components/HelperFunctions';
 import { OrderBaseScreen } from './OrderBaseScreen';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 
 class OrderTravelTypeScreen extends React.Component {
@@ -37,7 +40,7 @@ class OrderTravelTypeScreen extends React.Component {
                 <Picker
                     selectedValue={this.state.orderData.travelType}
                     style={{
-                        height: 50, width: Layout.window.width - 20, backgroundColor: 'white'
+                        width: wp('86%'), height: hp('10%'), backgroundColor: 'white'
                     }}
                     onValueChange={(itemValue, itemIndex) => this.setTravelType(itemValue)}>
                     <Picker.Item label="Work" value="Work" />
@@ -46,7 +49,7 @@ class OrderTravelTypeScreen extends React.Component {
                 </Picker>
             </View>;
 
-        const footer = createButton(() => this.props.navigation.navigate('OrderFrom', { orderData: this.state.orderData }), 'CONFIRM TRIP TYPE');
+        const footer = createButton(() => this.props.navigation.navigate('OrderFrom', { orderData: this.state.orderData }), 'CONFIRM');
 
         return <OrderBaseScreen
             currentOrderData={currentOrderData}
