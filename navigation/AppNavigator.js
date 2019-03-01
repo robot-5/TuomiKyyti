@@ -7,10 +7,12 @@ import { OrderWhenScreen } from '../screens/OrderWhenScreen';
 import { OrderPassengersScreen } from '../screens/OrderPassengersScreen';
 import { OrderCommentScreen } from '../screens/OrderCommentScreen';
 import { LoginScreen } from '../screens/LoginScreen';
+import { OrderTravelTypeScreen } from '../screens/OrderTravelTypeScreen';
 
 const AppNavigator = createStackNavigator({
   Login: { screen: LoginScreen },
   Home: { screen: HomeScreen },
+  OrderTravelType: { screen: OrderTravelTypeScreen },
   OrderFrom: { screen: OrderFromScreen },
   OrderTo: { screen: OrderToScreen },
   OrderWhen: { screen: OrderWhenScreen },

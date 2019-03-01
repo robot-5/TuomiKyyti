@@ -1,0 +1,58 @@
+import React from 'react';
+import { Picker, View, Text } from 'react-native';
+import Layout from '../constants/Layout';
+import { createButton } from '../components/Buttons';
+import { displayOrderData } from '../components/HelperFunctions';
+import { OrderBaseScreen } from './OrderBaseScreen';
+
+
+class OrderTravelTypeScreen extends React.Component {
+    static navigationOptions = {
+        title: 'From Where',
+    };
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            orderData: this.props.navigation.getParam('orderData'),
+        };
+        this.setTravelType = this.setTravelType.bind(this);
+    }
+
+    setTravelType(travelType) {
+        this.setState({
+            orderData: {
+                ...this.state.orderData,
+                travelType: travelType,
+            },
+        });
+
+    }
+
+    render() {
+        const currentOrderData = displayOrderData(this.state.orderData);
+        const input =
+            <View>
+                <Text>Choose the type of your trip:</Text>
+                <Picker
+                    selectedValue={this.state.orderData.travelType}
+                    style={{
+                        height: 50, width: Layout.window.width - 20, backgroundColor: 'white'
+                    }}
+                    onValueChange={(itemValue, itemIndex) => this.setTravelType(itemValue)}>
+                    <Picker.Item label="Work" value="Work" />
+                    <Picker.Item label="Education" value="Education" />
+                    <Picker.Item label="Leisure" value="Leisure" />
+                </Picker>
+            </View>;
+
+        const footer = createButton(() => this.props.navigation.navigate('OrderFrom', { orderData: this.state.orderData }), 'CONFIRM TRIP TYPE');
+
+        return <OrderBaseScreen
+            currentOrderData={currentOrderData}
+            input={input}
+            footer={footer} />
+    }
+}
+
+export { OrderTravelTypeScreen };

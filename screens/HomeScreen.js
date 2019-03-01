@@ -14,7 +14,7 @@ class HomeScreen extends React.Component {
     var orderData = {
       customerName: getParam('customerName'),
       customerNumber: getParam('customerNumber'),
-      travelType: '',
+      travelType: '', //for work, education or leisure
       fromLocation: '',
       toLocation: '',
       dateTime: '',
@@ -26,7 +26,7 @@ class HomeScreen extends React.Component {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
 
-        {createButton(() => navigate('OrderFrom', { orderData: orderData }), 'Order A Ride')}
+        {createButton(() => navigate('OrderTravelType', { orderData: orderData }), 'Order A Ride')}
 
       </View>
     );
