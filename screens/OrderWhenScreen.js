@@ -61,7 +61,7 @@ class OrderWhenScreen extends React.Component {
 
         </View>;
 
-        const footer = createButton(() => this.props.navigation.navigate('OrderPassengers', { orderData: this.state.orderData }), 'Confirm Time');
+        const footer = createButton(() => this.props.navigation.navigate('OrderPassengers', { orderData: this.state.orderData }), 'CONFIRM');
 
         return <OrderBaseScreen
             currentOrderData={currentOrderData}

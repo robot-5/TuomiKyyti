@@ -31,7 +31,7 @@ class OrderFromScreen extends React.Component {
     render() {
         const currentOrderData = displayOrderData(this.state.orderData);
         const input = createTextInput("Enter from where here", this.setFromLocation);
-        const footer = createButton(() => this.props.navigation.navigate('OrderTo', { orderData: this.state.orderData }), 'Confirm From');
+        const footer = createButton(() => this.props.navigation.navigate('OrderTo', { orderData: this.state.orderData }), 'CONFIRM');
 
         return <OrderBaseScreen
             currentOrderData={currentOrderData}

@@ -33,7 +33,7 @@ class OrderPassengersScreen extends React.Component {
     render() {
         const currentOrderData = displayOrderData(this.state.orderData);
         const input = createTextInput("Enter Passengers (Helpers, Children, ...)", this.setPassengers);
-        const footer = createButton(() => this.props.navigation.navigate('OrderComment', { orderData: this.state.orderData }), 'Confirm Passengers', 'wide');
+        const footer = createButton(() => this.props.navigation.navigate('OrderComment', { orderData: this.state.orderData }), 'CONFIRM', 'wide');
 
         return <OrderBaseScreen
             currentOrderData={currentOrderData}

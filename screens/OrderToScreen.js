@@ -32,7 +32,7 @@ class OrderToScreen extends React.Component {
     render() {
         const currentOrderData = displayOrderData(this.state.orderData);
         const input = createTextInput("Enter to where here", this.setToLocation);
-        const footer = createButton(() => this.props.navigation.navigate('OrderWhen', { orderData: this.state.orderData }), 'Confirm To')
+        const footer = createButton(() => this.props.navigation.navigate('OrderWhen', { orderData: this.state.orderData }), 'CONFIRM')
 
         return <OrderBaseScreen
             currentOrderData={currentOrderData}

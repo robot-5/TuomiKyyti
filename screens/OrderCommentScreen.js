@@ -41,7 +41,7 @@ class OrderCommentScreen extends React.Component {
 
         // TODO: give button special color
         // TODO: return to home screen after email sending
-        const footer = createButton(this.sendOrder, 'Send Order');
+        const footer = createButton(this.sendOrder, 'SEND ORDER');
 
         return <OrderBaseScreen
             currentOrderData={currentOrderData}
