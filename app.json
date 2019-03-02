@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "TuomiTaksi",
-    "slug": "TuomiTaksi",
+    "name": "TuomiKyyti",
+    "slug": "TuomiKyyti",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [

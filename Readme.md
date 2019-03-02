@@ -1,4 +1,4 @@
-# TuomiTaksi
+# TuomiKyyti
 Prototype for a mobile application that can be used to order taxi rides. Based on React Native and Expo.
 
 ## Get It Running
@@ -7,4 +7,5 @@ Prototype for a mobile application that can be used to order taxi rides. Based o
 3. In a place of your choice clone this repository via 'git clone https://github.com/robot-5/TuomiTaksi.git'
 4. In the new folder download all the depencies via 'npm install'
 5. Ignore the npm audit warnings and run the thing via 'expo start'. In the browser window you mave have to select 'Tunnel'.
-6. All Done (hopefully)!
+6. On a mobile device of your choice install the Expo Client ( https://expo.io/tools#client ) and use it to access the app via QR codoe or link.
+7. All Done (hopefully)!
