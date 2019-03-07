@@ -10,14 +10,15 @@ import {
 
 
 /**
-* Creates a text input field with given action and text. Text will be in upper case and action will be executed on submit.
+* Creates a text input field with given action and text. 
+  Text will be in upper case and action will be executed when text in input changes.
 */
 function createTextInput(text, action) {
 
     return <TextInput
         style={textInputStyles.textInput}
         placeholder={text}
-        onSubmitEditing={action}
+        onChange={action}
     />;
 }
 
