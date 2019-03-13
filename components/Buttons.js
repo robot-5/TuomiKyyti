@@ -1,13 +1,7 @@
 import React from 'react';
-import { Text, TouchableOpacity, StyleSheet } from 'react-native';
-import Layout from '../constants/Layout';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import Colors from '../constants/Colors';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-  listenOrientationChange as loc,
-  removeOrientationListener as rol
-} from 'react-native-responsive-screen';
 
 /**
  * Creates a Button based on TouchableOpacity Component with given action and text. Text will be in upper case.
@@ -46,3 +40,4 @@ const buttonStyles = StyleSheet.create({
 })
 
 export { createButton };
+

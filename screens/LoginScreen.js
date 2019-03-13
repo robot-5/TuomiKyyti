@@ -1,15 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
-import Layout from '../constants/Layout';
+import { StyleSheet, View } from 'react-native';
 import { createButton } from '../components/Buttons';
 import { createTextInput } from '../components/TextInput';
-import {
-    widthPercentageToDP as wp,
-    heightPercentageToDP as hp,
-    listenOrientationChange as loc,
-    removeOrientationListener as rol
-} from 'react-native-responsive-screen';
 
+//Screen for user to log in
 class LoginScreen extends React.Component {
 
     static navigationOptions = {
@@ -67,3 +61,4 @@ class LoginScreen extends React.Component {
 }
 
 export { LoginScreen };
+

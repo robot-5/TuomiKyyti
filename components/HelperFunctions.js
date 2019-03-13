@@ -1,7 +1,8 @@
-//contains helper functions, TODO: delete before handing in
+//contains helper functions
 import React from 'react';
 import { View, Text } from 'react-native';
 
+// displays text describing the given information for ordering a trip
 function displayOrderData(orderData) {
     return (
         <View>

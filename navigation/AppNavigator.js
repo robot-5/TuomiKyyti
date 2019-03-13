@@ -1,14 +1,15 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import { HomeScreen } from '../screens/HomeScreen';
-import { OrderFromScreen } from '../screens/OrderFromScreen';
-import { OrderToScreen } from '../screens/OrderToScreen';
-import { OrderWhenScreen } from '../screens/OrderWhenScreen';
-import { OrderPassengersScreen } from '../screens/OrderPassengersScreen';
-import { OrderCommentScreen } from '../screens/OrderCommentScreen';
 import { LoginScreen } from '../screens/LoginScreen';
+import { OrderCommentScreen } from '../screens/OrderCommentScreen';
+import { OrderFromScreen } from '../screens/OrderFromScreen';
+import { OrderPassengersScreen } from '../screens/OrderPassengersScreen';
+import { OrderToScreen } from '../screens/OrderToScreen';
 import { OrderTravelTypeScreen } from '../screens/OrderTravelTypeScreen';
+import { OrderWhenScreen } from '../screens/OrderWhenScreen';
 
+//main navigator for the whole app
 const AppNavigator = createStackNavigator({
   Login: { screen: LoginScreen },
   Home: { screen: HomeScreen },
@@ -18,9 +19,8 @@ const AppNavigator = createStackNavigator({
   OrderWhen: { screen: OrderWhenScreen },
   OrderPassengers: { screen: OrderPassengersScreen },
   OrderComment: { screen: OrderCommentScreen },
-  // TODO: add routes for other screens here
-
 },
   { initialRouteName: 'Login' });
 
 export { AppNavigator };
+

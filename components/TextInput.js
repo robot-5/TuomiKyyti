@@ -1,12 +1,7 @@
 import React from 'react';
-import { TextInput, StyleSheet } from 'react-native';
+import { StyleSheet, TextInput } from 'react-native';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import Colors from '../constants/Colors';
-import {
-    widthPercentageToDP as wp,
-    heightPercentageToDP as hp,
-    listenOrientationChange as loc,
-    removeOrientationListener as rol
-} from 'react-native-responsive-screen';
 
 
 /**
@@ -36,3 +31,4 @@ const textInputStyles = StyleSheet.create({
 })
 
 export { createTextInput };
+

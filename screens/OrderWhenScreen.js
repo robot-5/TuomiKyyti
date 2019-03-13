@@ -1,11 +1,13 @@
 import React from 'react';
-import { View, Text, TextInput, Switch } from 'react-native';
+import { Switch, Text, View } from 'react-native';
 import { createButton } from '../components/Buttons';
 import { displayOrderData } from '../components/HelperFunctions';
-import { OrderBaseScreen } from './OrderBaseScreen';
 import { createTextInput } from '../components/TextInput';
+import { OrderBaseScreen } from './OrderBaseScreen';
 
-
+//Screen that allows user to select the time for the trip. 
+// User may select either leaving time (when taxi should arrive at start location)
+// or arrival time (when taxi should arrive at destination)
 class OrderWhenScreen extends React.Component {
     static navigationOptions = {
         title: 'When',

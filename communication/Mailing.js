@@ -21,15 +21,13 @@ Customer Message: ${orderData.comment}`
 
 /*
 sends plaintext email to order a car ride
-theRecipients must be string array of recipient mail addresses
-theSubject must be string
-theMessage must be string
+subject must be string
+message must be string
 */
 
-function sendOrderEmail(subject, body) {
-    // TODO: set correct recipients
+function sendOrderEmail(subject, body) {    
     const mailOptions = {
-        recipients: [''],
+        recipients: [''], // TODO: set correct recipient (Tuomi customer service)
         ccRecipients: [],
         bccRecipients: [],
         subject: subject,

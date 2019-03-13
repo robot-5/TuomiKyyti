@@ -1,11 +1,10 @@
 import React from 'react';
-import { TextInput } from 'react-native';
 import { createButton } from '../components/Buttons';
 import { displayOrderData } from '../components/HelperFunctions';
-import { OrderBaseScreen } from './OrderBaseScreen';
 import { createTextInput } from '../components/TextInput';
+import { OrderBaseScreen } from './OrderBaseScreen';
 
-
+//Screen that allows user to specify accompanying passengers and possible gear (e.g. wheelchair) for the trip
 class OrderPassengersScreen extends React.Component {
     static navigationOptions = {
         title: 'With Whom',

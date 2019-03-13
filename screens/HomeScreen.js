@@ -2,6 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { createButton } from '../components/Buttons';
 
+// Home Screen and main entry point for the app
 class HomeScreen extends React.Component {
 
   static navigationOptions = {

@@ -1,11 +1,10 @@
 import React from 'react';
-import { TextInput } from 'react-native';
 import { createButton } from '../components/Buttons';
 import { displayOrderData } from '../components/HelperFunctions';
-import { OrderBaseScreen } from './OrderBaseScreen';
 import { createTextInput } from '../components/TextInput';
+import { OrderBaseScreen } from './OrderBaseScreen';
 
-
+//Screen that allows user to set the destination of the trip
 class OrderToScreen extends React.Component {
     static navigationOptions = {
         title: 'To Where',

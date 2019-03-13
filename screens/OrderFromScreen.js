@@ -4,7 +4,7 @@ import { createTextInput } from '../components/TextInput';
 import { displayOrderData } from '../components/HelperFunctions';
 import { OrderBaseScreen } from './OrderBaseScreen';
 
-
+//Screen that allows user to set the starting point of the trip
 class OrderFromScreen extends React.Component {
     static navigationOptions = {
         title: 'From Where',

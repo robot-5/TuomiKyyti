@@ -1,14 +1,11 @@
 import React from 'react';
-import { Picker, View, Text } from 'react-native';
+import { Picker, Text, View } from 'react-native';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import { createButton } from '../components/Buttons';
 import { displayOrderData } from '../components/HelperFunctions';
 import { OrderBaseScreen } from './OrderBaseScreen';
-import {
-    widthPercentageToDP as wp,
-    heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
 
-
+//Screen that allows user to select the travel type of the trip
 class OrderTravelTypeScreen extends React.Component {
     static navigationOptions = {
         title: 'From Where',

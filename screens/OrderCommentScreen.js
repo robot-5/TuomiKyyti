@@ -1,12 +1,11 @@
 import React from 'react';
-import { TextInput } from 'react-native';
+import { createOrderEmailText, sendOrderEmail } from '../communication/Mailing';
 import { createButton } from '../components/Buttons';
 import { displayOrderData } from '../components/HelperFunctions';
-import { OrderBaseScreen } from './OrderBaseScreen';
-import { createOrderEmailText, sendOrderEmail } from '../communication/Mailing';
 import { createTextInput } from '../components/TextInput';
+import { OrderBaseScreen } from './OrderBaseScreen';
 
-
+//Screen that allows user to send a free-text comment with the order
 class OrderCommentScreen extends React.Component {
     static navigationOptions = {
         title: 'Comment',
