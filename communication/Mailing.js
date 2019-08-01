@@ -6,8 +6,8 @@ function createOrderEmailText(orderData) {
 
     //using ES6 template strings (backticks instead of quotes)
     const subject = `Ride Order from ${orderData.customerName}`;
-    const body = 
-    `Customer Name: ${orderData.customerName}\n
+    const body =
+        `Customer Name: ${orderData.customerName}\n
 Customer ID: ${orderData.customerNumber}\n
 Travel Type: ${orderData.travelType}\n
 From: ${orderData.fromLocation}\n
@@ -25,7 +25,7 @@ subject must be string
 message must be string
 */
 
-function sendOrderEmail(subject, body) {    
+function sendOrderEmail(subject, body) {
     const mailOptions = {
         recipients: [''], // TODO: set correct recipient (Tuomi customer service)
         ccRecipients: [],
@@ -40,7 +40,7 @@ function sendOrderEmail(subject, body) {
 
 // prompts user to open mail app where fields will be prefilled with given options
 function sendMail(mailOptions) {
-    mailing = MailComposer.composeAsync(mailOptions);
+    MailComposer.composeAsync(mailOptions);
     // TODO: check promise resolution?
 }
 

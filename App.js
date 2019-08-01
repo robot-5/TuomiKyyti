@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import { createAppContainer } from 'react-navigation';
 import { AppNavigator } from './navigation/AppNavigator';
